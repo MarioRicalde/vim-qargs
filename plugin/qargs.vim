@@ -8,11 +8,9 @@ function! QuickfixFilenames()
   return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
 
-" argdo wrapper that will disable all events for read/save
 command! -nargs=? Argdo call Argdo(<q-args>)
 function! Argdo(command)
-  set eventignore=all
-  execute 'argdo '. a:command . ' | update'
-  set eventignore=
+  " Ignore Auto Commands, this makes changes as fast as possible.
+  execute 'noautocmd argdo '. a:command . ' | update'
 endfunction
 
