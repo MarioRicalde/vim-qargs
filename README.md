@@ -15,3 +15,5 @@ and then perform a multiple-file search and replace.
 ##### Based on: 
 
 [Search & replace using quickfix list in Vim](http://stackoverflow.com/a/5686810/128850).
+
+Follow me at [Twitter](http://twitter.com/mario_ricalde) or at [mario.ricalde.mx](http://mario.ricalde.mx).
