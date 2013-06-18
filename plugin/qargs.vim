@@ -14,7 +14,8 @@ function! s:Qdo(bang, command)
 
   arglocal
   exe 'args '.s:QuickfixFilenames()
-  exe 'argdo'.a:bang.' '.a:command
+  " Ignore Auto Commands, this makes changes as fast as possible.
+  exe 'noautocmd argdo'.a:bang.' '.a:command. ' | update'
   argglobal
 
   if in_quickfix_window
@@ -30,3 +31,4 @@ function! s:QuickfixFilenames()
   endfor
   return join(map(values(buffer_numbers), 'fnameescape(v:val)'))
 endfunction
+
